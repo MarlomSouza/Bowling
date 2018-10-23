@@ -60,5 +60,20 @@ namespace Bowling
             //Then
             Assert.Equal(29, placar.Pontuacao);
         }
+
+        [Fact]
+        public void Deve_calcular_dois_spare()
+        {
+            //Given
+            Placar placar = new Placar();
+            //When
+            placar.Pontuar(1, 4);
+            placar.Pontuar(4, 5);
+            placar.Pontuar(6, 4);
+            placar.Pontuar(5, 5);
+            placar.Pontuar(10, 0);
+            //Then
+            Assert.Equal(49, placar.Pontuacao);
+        }
     }
 }
