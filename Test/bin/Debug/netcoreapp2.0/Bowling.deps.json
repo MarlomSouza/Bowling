@@ -1071,7 +1071,7 @@
     "Microsoft.NET.Test.Sdk/15.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-T6ssUqDEGRW9hS9p2v+Z0lBhcGWDddXgONrAwyWZE4lES3KVwQy2o7esUdYJgs7z3cqGKm+YDedVHth2ns4eOA==",
+      "sha512": "sha512-XHxjl8/OfEvjZhBa1pmCSIoN86SOc/XV/4avfWm9L4Cb71gXll9Ojxcgn81KzeF3ldg8aTOlkJsMv0oLOs4XUA==",
       "path": "microsoft.net.test.sdk/15.6.0",
       "hashPath": "microsoft.net.test.sdk.15.6.0.nupkg.sha512"
     },
@@ -1085,14 +1085,14 @@
     "Microsoft.TestPlatform.ObjectModel/15.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-p9Ln24HvUASoyS03rpGJqj1JXfMosQXJuT+rt4vxktFjegVK6AAcLQLyk9aUB/SetaiB9KB/V/6YRz8tlxqeGQ==",
+      "sha512": "sha512-WHkBdjpK1xUPjmb8wGpwpiFNjiYzmiEjEFrDMHcLSyUvdhpgm0EvJPiBncHFrHgH7L+awlc3Jbg9C93uYM9pHA==",
       "path": "microsoft.testplatform.objectmodel/15.6.0",
       "hashPath": "microsoft.testplatform.objectmodel.15.6.0.nupkg.sha512"
     },
     "Microsoft.TestPlatform.TestHost/15.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-a72dAct/33fnunyHP2H29MUr/RkqyOXq5KjKLfXlwyAeGmSTo79H4LDanOJ+EZImF/JEYx/FL4SDph080X+4tQ==",
+      "sha512": "sha512-9ExqCuJ/W7ikkQt4ABR0JumVj6p9bpaRJpOuIFtIr8xPilPp+0+3t5pAgO02EnlJX9h5qwT5eUm9XkztuW65yA==",
       "path": "microsoft.testplatform.testhost/15.6.0",
       "hashPath": "microsoft.testplatform.testhost.15.6.0.nupkg.sha512"
     },
