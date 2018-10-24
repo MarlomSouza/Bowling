@@ -5,24 +5,27 @@ namespace Bowling
     public class Placar
     {
         public int Pontuacao { get; set; }
-        public bool Strike { get; private set; }
-        public bool Spare { get; private set; }
+        public bool EhSpare { get; private set; }
 
-        public Placar()
+        public Placar() { }
+
+        public void Pontuar(int primeiraTentativa, int segundaTentativa)
         {
+            var totalQuadro = primeiraTentativa + segundaTentativa;
+            if (EhSpare)
+            {
+                Pontuacao += primeiraTentativa;
+                return;
+            }
+
+            Pontuacao += totalQuadro;
+            TipoJogada(primeiraTentativa, segundaTentativa);
         }
 
-        public void Pontuar(int primeiraTentativa, int segundaTentiva)
+        private void TipoJogada(int primeiraTentativa, int segundaTentativa)
         {
-            var valorJogada = primeiraTentativa + segundaTentiva;
-            if (Spare || Strike)
-                Pontuacao += primeiraTentativa;
-            else
-                Pontuacao += valorJogada;
-
-            Strike = primeiraTentativa == 10;
-            Spare = valorJogada == 10;
+            var totalQuadro = primeiraTentativa + segundaTentativa;
+            EhSpare = (primeiraTentativa != 10 && totalQuadro == 10);
         }
     }
-
 }

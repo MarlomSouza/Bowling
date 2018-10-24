@@ -46,6 +46,27 @@ namespace Bowling
             //Then
             Assert.Equal(14, placar.Pontuacao);
         }
+        [Fact]
+        public void Deve_identificar_um_spare()
+        {
+            //Given
+            Placar placar = new Placar();
+            //When
+            placar.Pontuar(6, 4);
+            //Then
+            Assert.True(placar.EhSpare);
+        }
+
+        [Fact]
+        public void Nao_deve_considerar_um_spare()
+        {
+            //Given
+            Placar placar = new Placar();
+            //When
+            placar.Pontuar(10, 0);
+            //Then
+            Assert.False(placar.EhSpare);
+        }
 
         [Fact]
         public void Deve_calcular_um_spare()
@@ -62,7 +83,20 @@ namespace Bowling
         }
 
         [Fact]
-        public void Deve_calcular_dois_spare()
+        public void Nao_deve_calcular_ponto_em_um_spare_sem_a_proxima_jogada()
+        {
+            //Given
+            Placar placar = new Placar();
+            //When
+            placar.Pontuar(1, 4);
+            placar.Pontuar(4, 5);
+            placar.Pontuar(6, 4);
+            //Then
+            Assert.Equal(24, placar.Pontuacao);
+        }
+
+        [Fact]
+        public void Deve_calcular_duas_spare()
         {
             //Given
             Placar placar = new Placar();
@@ -71,9 +105,9 @@ namespace Bowling
             placar.Pontuar(4, 5);
             placar.Pontuar(6, 4);
             placar.Pontuar(5, 5);
-            placar.Pontuar(10, 0);
+            placar.Pontuar(1, 0);
             //Then
-            Assert.Equal(49, placar.Pontuacao);
+            Assert.Equal(40, placar.Pontuacao);
         }
     }
 }
