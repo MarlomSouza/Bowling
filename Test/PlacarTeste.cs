@@ -92,11 +92,11 @@ namespace Bowling
             placar.Pontuar(4, 5);
             placar.Pontuar(6, 4);
             //Then
-            Assert.Equal(24, placar.Pontuacao);
+            Assert.Equal(14, placar.Pontuacao);
         }
 
         [Fact]
-        public void Deve_calcular_duas_spare()
+        public void Deve_calcular_dois_spare()
         {
             //Given
             Placar placar = new Placar();
@@ -109,5 +109,83 @@ namespace Bowling
             //Then
             Assert.Equal(40, placar.Pontuacao);
         }
+
+
+        [Fact]
+        public void Deve_informar_um_strike()
+        {
+            //Given
+            Placar placar = new Placar();
+            //When
+            placar.Pontuar(10, 0);
+
+            //Then
+            Assert.True(placar.EhStrike);
+        }
+
+        [Fact]
+        public void Nao_deve_informar_um_strike()
+        {
+            //Given
+            Placar placar = new Placar();
+            //When
+            placar.Pontuar(1, 4);
+
+            //Then
+            Assert.False(placar.EhStrike);
+        }
+
+        [Fact]
+        public void Deve_informar_strike_e_nao_spare()
+        {
+            //Given
+            Placar placar = new Placar();
+            //When
+            placar.Pontuar(10, 0);
+
+            //Then
+            Assert.True(placar.EhStrike);
+            Assert.False(placar.EhSpare);
+        }
+        [Fact]
+        public void Deve_informar_spare_e_nao_strike()
+        {
+            //Given
+            Placar placar = new Placar();
+            //When
+            placar.Pontuar(0, 10);
+            //Then
+            Assert.False(placar.EhStrike);
+            Assert.True(placar.EhSpare);
+        }
+
+        [Fact]
+        public void Nao_deve_calcular_jogada_com_mais_de_dez_pinos()
+        {
+            //Given
+            Placar placar = new Placar();
+            //When
+            Action testCode = () => placar.Pontuar(6, 5);
+            //Then
+            var erro = Assert.Throws<ArgumentException>(testCode);
+            Assert.Equal("Jogada inválida", erro.Message);
+        }
+
+        [Fact]
+        public void Deve_calcular_um_spare_e_um_strike()
+        {
+            //Given
+      Placar placar = new Placar();
+            //When
+            placar.Pontuar(1, 4);
+            placar.Pontuar(4, 5);
+            placar.Pontuar(6, 4);
+            placar.Pontuar(5, 5);
+            placar.Pontuar(10, 0);
+            placar.Pontuar(0, 1);
+            //Then
+            Assert.
+        }
+
     }
 }
