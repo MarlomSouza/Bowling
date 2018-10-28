@@ -1,4 +1,3 @@
-D:\Projetos\Bowling\Test\obj\Debug\netcoreapp2.0\Bowling.csprojAssemblyReference.cache
 D:\Projetos\Bowling\Test\obj\Debug\netcoreapp2.0\Bowling.csproj.CoreCompileInputs.cache
 D:\Projetos\Bowling\Test\obj\Debug\netcoreapp2.0\Bowling.AssemblyInfoInputs.cache
 D:\Projetos\Bowling\Test\obj\Debug\netcoreapp2.0\Bowling.AssemblyInfo.cs
@@ -12,3 +11,4 @@ D:\Projetos\Bowling\Test\bin\Debug\netcoreapp2.0\Bowling.dll
 D:\Projetos\Bowling\Test\bin\Debug\netcoreapp2.0\Bowling.pdb
 D:\Projetos\Bowling\Test\obj\Debug\netcoreapp2.0\Bowling.dll
 D:\Projetos\Bowling\Test\obj\Debug\netcoreapp2.0\Bowling.pdb
+d:\Projetos\Bowling\Test\obj\Debug\netcoreapp2.0\Bowling.csprojResolveAssemblyReference.cache

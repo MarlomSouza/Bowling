@@ -8,25 +8,23 @@ namespace Bowling
         public bool EhSpare { get; private set; }
         public int Spare { get; private set; }
         public bool EhStrike { get; private set; }
+        public int Strike { get; private set; }
 
         public Placar() { }
 
         public void Pontuar(int primeiraTentativa, int segundaTentativa)
         {
             ValidarJogada(primeiraTentativa, segundaTentativa);
-            TipoJogada(primeiraTentativa, segundaTentativa);
             var totalQuadro = primeiraTentativa + segundaTentativa;
+            Pontuacao += totalQuadro;
 
-            if (EhSpare)
-            {
-                if (Spare != 0)
-                    Spare += primeiraTentativa;
+            if (EhStrike)
+                totalQuadro *= 2;
+            else if (EhSpare)
+                totalQuadro += primeiraTentativa;
 
-                Spare += 10;
-                return;
-            }
-            Pontuacao += Spare + totalQuadro;
-            Spare = 0;
+
+            TipoJogada(primeiraTentativa, segundaTentativa);
         }
 
         private void ValidarJogada(int primeiraTentativa, int segundaTentativa)
@@ -38,7 +36,7 @@ namespace Bowling
         private void TipoJogada(int primeiraTentativa, int segundaTentativa)
         {
             var totalQuadro = primeiraTentativa + segundaTentativa;
-            EhStrike = primeiraTentativa == 10;
+            EhStrike = primeiraTentativa == 10 && segundaTentativa == 0;
             EhSpare = (primeiraTentativa != 10 && totalQuadro == 10);
         }
     }
